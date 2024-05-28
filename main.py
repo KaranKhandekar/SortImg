@@ -1,88 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SortImg Documentation</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2, h3 {
-            color: #333;
-        }
-        code {
-            background: #e4e4e4;
-            padding: 2px 5px;
-            border-radius: 4px;
-        }
-        pre {
-            background: #e4e4e4;
-            padding: 10px;
-            border-radius: 4px;
-            overflow-x: auto;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>SortImg Documentation</h1>
-        <p>This documentation provides information on how to set up and use the SortImg Python program.</p>
-        
-        <h2>Prerequisites</h2>
-        <p>Before you can run the SortImg program, you need to install the following packages:</p>
-        <ul>
-            <li><code>Pillow</code> - Python Imaging Library (PIL) fork</li>
-            <li><code>tkinter</code> - Python's de-facto standard GUI (Graphical User Interface) package</li>
-        </ul>
-        <p>To install these packages, you can use the following pip commands:</p>
-        <pre><code>pip install pillow</code></pre>
-
-        <h3>Installing tkinter on macOS</h3>
-        <p>If <code>tkinter</code> is not installed on your macOS system, follow these steps:</p>
-        <ol>
-            <li>Install Homebrew (if not already installed) by running the following command in your terminal:</li>
-            <pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></pre>
-            <li>Install Python (including <code>tkinter</code>) using Homebrew:</li>
-            <pre><code>brew install python</code></pre>
-            <li>Verify the <code>tkinter</code> installation by creating a file called <code>test_tkinter.py</code> with the following content:</li>
-            <pre><code>import tkinter
-tkinter._test()</code></pre>
-            <li>Run the script using Python:</li>
-            <pre><code>python3 test_tkinter.py</code></pre>
-            <p>A small window should pop up indicating that <code>tkinter</code> is installed and working correctly.</p>
-        </ol>
-
-        <h2>Program Description</h2>
-        <p>The SortImg program sorts images based on whether they have a white background. It creates two folders:</p>
-        <ul>
-            <li><strong>white_background</strong></li>
-            <li><strong>non_white_background</strong></li>
-        </ul>
-        <p>Images are then moved into these folders based on the background color.</p>
-
-        <h2>How to Use</h2>
-        <ol>
-            <li>Run the SortImg program.</li>
-            <li>Click the "Select Folder Location" button to choose the location where the <code>white_background</code> and <code>non_white_background</code> folders will be created.</li>
-            <li>Click the "Run" button to select the source folder containing the images you want to sort.</li>
-            <li>The program will process the images and move them to the appropriate folders based on their background color.</li>
-        </ol>
-
-        <h2>Program Code</h2>
-        <pre><code>import os
+import os
 import shutil
 import time
 import webbrowser
@@ -146,7 +62,7 @@ def sort_images(source_folder, status_label, count_label, time_label):
 
 def run_app():
     root = Tk()
-    root.title("SortImg")
+    root.title("SortImg for Saks")
 
     screen_width = root.winfo_screenwidth()
     screen_height = root.winfo_screenheight()
@@ -177,10 +93,10 @@ def run_app():
             messagebox.showwarning("No Folder Selected", "Please select a source folder.")
 
     def on_how_to_use():
-        webbrowser.open("https://www.saks.com")
+        webbrowser.open("https://karankhandekar.github.io/saks_sort_img/how_to_use.html")
 
     def on_help():
-        webbrowser.open("https://www.saks.com/help")
+        webbrowser.open("https://karankhandekar.github.io/saks_sort_img/documentation.html")
 
     run_button = Button(button_frame, text="Run", command=on_run, font=('Helvetica', 12), fg='black', bg='#edeceb')
     run_button.pack(pady=10)
@@ -207,10 +123,3 @@ def run_app():
 
 if __name__ == '__main__':
     run_app()
-        </code></pre>
-
-        <h2>Contact Information</h2>
-        <p>If you have any questions or need further assistance, please contact <a href="mailto:karan.khandekar@saks.com">karan.khandekar@saks.com</a>. and <a href="mailto:manohar.murugan@saks.com">manohar.murugan@saks.com</a>.</p>
-    </div>
-</body>
-</html>
