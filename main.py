@@ -23,6 +23,7 @@ def is_white_background(image_path):
             width, height = img.size
             pixels = img.load()
             
+            
             # Check the top right 5x5 pixels
             for x in range(width-5, width):
                 for y in range(5):
